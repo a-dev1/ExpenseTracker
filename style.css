@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,900;1,400;1,500;1,600;1,900&display=swap');
+
+
+:root {
+    --green: #07e007;
+    --red: #b10909;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    background-color: aliceblue;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    /* justify-content: center; */
+    min-width: 400px;
+    width: 400px;
+    height: 100vh;
+    /* border: 1px solid black; */
+}
+
+.heading {
+    padding: 25px;
+    text-align: center;
+}
+
+
+
+.your-balance {
+    text-align: left;
+}
+
+.income-expense-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.2), -1px 0px 2px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+}
+
+.income,
+.expense {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 52px;
+}
+
+.income {
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.income h2 {
+    color: var(--green);
+}
+
+.expense h2 {
+    color: var(--red);
+}
+
+.history-container,
+.add-transaction-container {
+    width: 100%;
+}
+
+.history-container h2,
+.add-transaction-container h2 {
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 8px;
+    margin: 5px 0 5px 0;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.item .expense-name {
+    position: relative;
+    left: -150px;
+}
+
+.credit {
+    border-right: 6px solid var(--red);
+}
+
+.debit {
+    border-right: 6px solid var(--green);
+}
+
+label {
+    display: block;
+    padding: 5px 0;
+}
+
+input {
+    width: 100%;
+    padding: 5px;
+    font-size: 16px;
+    border: none;
+    box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.cross-btn {
+    display: inline;
+    padding: 2px 8px;
+    transform: translateX(-110%);
+    border: none;
+    background-color: red;
+    color: #fff;
+    transition: all 0.3s linear;
+    opacity: 0;
+}
+
+.cross-btn:hover {
+    opacity: 1;
+}
+
+.add-btn {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
+    color: #fff;
+    background-color: blueviolet;
+    border: none;
+    margin: 10px 0;
+}

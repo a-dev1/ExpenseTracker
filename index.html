@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Expense Tracker</title>
+</head>
+<body>
+    <div class="container">
+        <h2 class="heading">Expense Tracker</h2>
+
+        <div class="your-balance">
+            <h3>YOUR BALANCE</h3>
+            <h1 class="balance-value">$150.00</h1>
+        </div>
+        
+        <div class="income-expense-container">
+            <div class="income">
+                <h3>INCOME</h3>
+                <h2 class="income-value">$300.00</h2>
+            </div>
+            <div class="expense">
+                <h3>EXPENSE</h3>
+                <h2 class="expense-value">$150.00</h2>
+            </div>
+        </div>
+
+        <div class="history-container">
+            <h2>History</h2>
+
+            <div class="item-container">
+                <div class="item credit">
+                    <button class="cross-btn">X</button>
+                    <span class="expense-name">Camera</span>
+                    <span class="expense-amount">-100</span>
+                </div>
+            </div>
+
+            <div class="item-container">
+                <div class="item debit">
+                    <button class="cross-btn">X</button>
+                    <span class="expense-name">Camera</span>
+                    <span class="expense-amount">-100</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="add-transaction-container">
+            <h2>Add new transaction</h2>
+            <label for="t_in">Text</label>
+            <input type="text" id="t_in" placeholder="Enter text.." class="input-type">
+            
+            <label for="a_in">Amount</label>
+            <h5>(negative - expense, positive - income)</h5>
+            <input type="number" id="a_in" placeholder="Enter amount.." class="input-value">
+            <button class="add-btn">Add transaction</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
