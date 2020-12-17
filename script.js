@@ -10,11 +10,11 @@ let income= 1000, expense=0, balance=0;
 
 
 let calculate = () => {
-    balance = income - expense;
+    balance = income - Math.abs(expense);
     
     income_bx.innerHTML = `$${income}`
-    expense_bx.innerHTML = `$${expense}`
-    balance_bx.innerHTML = `$${balance}`
+    expense_bx.innerHTML = `$${Math.abs(expense)}`
+    balance_bx.innerHTML = `$${Math.abs(balance)}`
 }
 
 const makeItem = (type, value) => {
@@ -33,7 +33,17 @@ const makeItem = (type, value) => {
     item.appendChild(span2);
     
     item.classList.add('item');
-    (value > 0) ? item.classList.add('debit') : item.classList.add('credit');
+    if(value > 0){
+        item.classList.add('debit')
+        income += Number(value)
+        calculate();
+    }
+    else{
+        item.classList.add('credit');
+        expense += Number(value)
+        calculate();
+    } 
+
     button.classList.add('cross-btn');
     span1.classList.add('expense-name');
     span2.classList.add('expense-amount');
@@ -44,6 +54,18 @@ const makeItem = (type, value) => {
 
 const removeItem = (e) => {
     console.log(e.target);
+
+    let d_value = Number(e.target.nextElementSibling.nextElementSibling.innerText);
+    
+    if(d_value > 0){
+        income -= d_value;
+        calculate();
+    }
+    else {
+        expense -= Math.abs(d_value)
+        calculate();
+    }
+
     e.target.parentNode.remove();
 }
 
