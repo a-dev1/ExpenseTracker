@@ -62,7 +62,7 @@ const removeItem = (e) => {
         calculate();
     }
     else {
-        expense -= Math.abs(d_value)
+        expense = Math.abs(expense) - Math.abs(d_value);
         calculate();
     }
 
