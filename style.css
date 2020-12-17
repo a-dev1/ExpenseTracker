@@ -94,11 +94,27 @@ body {
     padding: 8px;
     margin: 5px 0 5px 0;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.cross-btn {
+    display: inline;
+    padding: 2px 8px;
+    transform: translateX(-110%);
+    border: none;
+    background-color: red;
+    color: #fff;
+    transition: all 0.3s linear;
+    opacity: 0;
+}
+
+.cross-btn:hover {
+    opacity: 1;
 }
 
 .item .expense-name {
-    position: relative;
-    left: -150px;
+    position: absolute;
+    left:  8px;
 }
 
 .credit {
@@ -120,21 +136,7 @@ input {
     font-size: 16px;
     border: none;
     box-shadow: 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
-.cross-btn {
-    display: inline;
-    padding: 2px 8px;
-    transform: translateX(-110%);
-    border: none;
-    background-color: red;
-    color: #fff;
-    transition: all 0.3s linear;
-    opacity: 0;
-}
-
-.cross-btn:hover {
-    opacity: 1;
+    outline: none;
 }
 
 .add-btn {
