@@ -48,6 +48,12 @@ body {
     margin-top: 20px;
 }
 
+.income-expense-container > div {
+    flex: 1;
+    text-align: center;
+}
+
+
 .income,
 .expense {
     display: flex;
