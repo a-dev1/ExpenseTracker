@@ -145,7 +145,14 @@ input {
     padding: 8px;
     font-size: 16px;
     color: #fff;
-    background-color: rgb(138, 43, 226);
+    background-color: blueviolet;
     border: none;
     margin: 10px 0;
+    outline: none;
+    transition: all 2ms linear;
+}
+
+.add-btn:active {
+    background-color: rgb(0, 0, 0);
+    transform: scale(0.97);
 }
