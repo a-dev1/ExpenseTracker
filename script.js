@@ -17,7 +17,6 @@ let calculate = () => {
     balance_bx.innerHTML = `$${Math.abs(balance)}`
 }
 
-
 const makeItem = (type, value) => {
     const item = document.createElement('div');
     // const button = document.createElement('button');
@@ -25,10 +24,9 @@ const makeItem = (type, value) => {
     // const span2 = document.createElement('span');
 
     // button.innerHTML = "X";
-    // button.addEventListener('click', removeItem);
     // span1.innerHTML = type;
     // span2.innerHTML = value;
-
+    
     // item.appendChild(button);
     // item.appendChild(span1);
     // item.appendChild(span2);
@@ -44,19 +42,33 @@ const makeItem = (type, value) => {
         expense += Number(value)
         calculate();
     } 
-
+    
     item.innerHTML = `
-        <button class="cross-btn" onclick="removeItem()">X</button>
-        <span class="expense-name">${type}</span>
-        <span class="expense-value">${value}</span>    
+    <button class="cross-btn" onclick="removeItem(event)">X</button>
+    <span class="expense-name">${type}</span>
+    <span class="expense-value">${value}</span>    
     `
-
-    // button.classList.add('cross-btn');
-    // span1.classList.add('expense-name');
-    // span2.classList.add('expense-amount');
-
+    
     item_container.appendChild(item)
+    // document.querySelector('.cross-btn').addEventListener('click', removeItem);
     return item;
+}
+
+const removeItem = (e) => {
+    console.log(e.srcElement);
+    
+    let d_value = Number(e.target.nextElementSibling.nextElementSibling.innerText);
+    
+    if(d_value > 0){
+        income -= d_value;
+        calculate();
+    }
+    else {
+        expense = Math.abs(expense) - Math.abs(d_value);
+        calculate();
+    }
+
+    e.target.parentNode.remove();
 }
 
 const addItem = () => {
@@ -67,7 +79,7 @@ const addItem = () => {
     input_type.value = "";
     input_value.value = "";
 }
-
+                                   
 add_btn_bx.addEventListener('click', addItem)
 
 document.querySelectorAll('.cross-btn').forEach(btn => {
