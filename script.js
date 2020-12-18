@@ -6,9 +6,10 @@ let input_value = document.querySelector(".input-value");
 let add_btn_bx = document.querySelector(".add-btn");
 let item_container = document.querySelector(".history-container");
 
+//initial Income would be 1000
 let income= 1000, expense=0, balance=0;
 
-
+//Update costs 
 let calculate = () => {
     balance = income - Math.abs(expense);
     
@@ -17,20 +18,10 @@ let calculate = () => {
     balance_bx.innerHTML = `$${Math.abs(balance)}`
 }
 
+//create Item element on click
 const makeItem = (type, value) => {
     const item = document.createElement('div');
-    // const button = document.createElement('button');
-    // const span1 = document.createElement('span');
-    // const span2 = document.createElement('span');
-
-    // button.innerHTML = "X";
-    // span1.innerHTML = type;
-    // span2.innerHTML = value;
-    
-    // item.appendChild(button);
-    // item.appendChild(span1);
-    // item.appendChild(span2);
-    
+ 
     item.classList.add('item');
     if(value > 0){
         item.classList.add('debit')
@@ -48,12 +39,11 @@ const makeItem = (type, value) => {
     <span class="expense-name">${type}</span>
     <span class="expense-value">${value}</span>    
     `
-    
     item_container.appendChild(item)
-    // document.querySelector('.cross-btn').addEventListener('click', removeItem);
     return item;
 }
 
+//To remove Item from DOM & Update cost values
 const removeItem = (e) => {
     console.log(e.srcElement);
     
@@ -71,6 +61,7 @@ const removeItem = (e) => {
     e.target.parentNode.remove();
 }
 
+//To add item on click on add transaction button
 const addItem = () => {
     
     if(input_type.value != "" && input_value.value != "")
